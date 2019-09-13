@@ -18,7 +18,7 @@ jdbc.password
 Then build the server with your IDE or manually using `mvn package` command and install it to a web server (i.e. Tomcat). 
 
 #### Client
-Go to [TodoApi.kt](todo_app_sample/todo_client_android/data/src/main/java/com/nemesis/todo_client/data/api/TodoApi.kt) and change value of `serverUrl`  variable to match app's server url. Then build and install the client to your device with Android Studio.
+Go to [TodoApi.kt](todo_client_android/data/src/main/java/com/nemesis/todo_client/data/api/TodoApi.kt) and change value of `serverUrl`  variable to match app's server url. Then build and install the client to your device with Android Studio.
 
 
 
