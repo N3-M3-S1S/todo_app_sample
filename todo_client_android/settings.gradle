@@ -1,0 +1,2 @@
+include ':domain', ':data', ':android'
+rootProject.name='todo_client'

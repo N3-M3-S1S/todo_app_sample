@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">todo_client</string>
+    <string name="no_items_message">No todo items to display, pull to refresh</string>
+    <string name="enter_text_hint">Enter text:</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+</resources>
