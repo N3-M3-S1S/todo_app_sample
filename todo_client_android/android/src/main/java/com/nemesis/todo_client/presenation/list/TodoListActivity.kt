@@ -3,9 +3,7 @@ package com.nemesis.todo_client.presenation.list
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
@@ -28,13 +26,10 @@ class TodoListActivity : AppCompatActivity(R.layout.todo_list), CoroutineScope b
         super.onCreate(savedInstanceState)
         lifecycle.addObserver(todoListViewModel)
 
-        with(
-            DataBindingUtil.bind<TodoListBinding>(list_root)!!
-        ) {
+        with(TodoListBinding.bind(list_root)) {
             lifecycleOwner = this@TodoListActivity
             viewModel = todoListViewModel
         }
-
 
         todoListViewModel.isListLoading.observe(this, Observer {
             listSwipeRefresh.isRefreshing = it
@@ -43,7 +38,6 @@ class TodoListActivity : AppCompatActivity(R.layout.todo_list), CoroutineScope b
         todoListViewModel.showEditItemViewEvent.observe(this, Observer {
             TodoItemEditFragment.getInstance(it).show(supportFragmentManager, editFragmentTag)
         })
-
 
         listSwipeRefresh.setOnRefreshListener { todoListViewModel.refreshList() }
 
